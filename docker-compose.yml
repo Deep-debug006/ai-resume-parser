@@ -1,0 +1,103 @@
+services:
+  # ---------------------------------------------------------------------------
+  # 1. PostgreSQL Database with pgvector extension support
+  # ---------------------------------------------------------------------------
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: resume_parser_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-ai_resume_parser}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-postgres} -d $${POSTGRES_DB:-ai_resume_parser}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # 2. FastAPI Backend Service
+  # ---------------------------------------------------------------------------
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: resume_parser_backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-ai_resume_parser}
+      APP_NAME: ${APP_NAME:-AI Resume Parser & Job Matcher Backend}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      DEBUG: ${DEBUG:-true}
+      PORT: 8001
+      HOST: 0.0.0.0
+      BACKEND_CORS_ORIGINS: ${BACKEND_CORS_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.8-flash}
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-auto}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-ai_resume_parser_jwt_super_secret_key_production_grade_security_2026}
+      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-1440}
+      MAX_UPLOAD_SIZE_MB: ${MAX_UPLOAD_SIZE_MB:-10}
+      OCR_ENABLED: ${OCR_ENABLED:-true}
+    ports:
+      - "${BACKEND_PORT:-8001}:8001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # 3. React SPA Frontend Service
+  # ---------------------------------------------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: resume_parser_frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      VITE_BACKEND_URL: http://backend:8001
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/healthz || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - app-network
+    restart: unless-stopped
+
+# -----------------------------------------------------------------------------
+# Persistent Volumes
+# -----------------------------------------------------------------------------
+volumes:
+  postgres_data:
+    driver: local
+
+# -----------------------------------------------------------------------------
+# Isolated Bridge Network
+# -----------------------------------------------------------------------------
+networks:
+  app-network:
+    driver: bridge

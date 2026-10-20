@@ -1,0 +1,6 @@
+{
+  "name": "AI Resume Parser & Job Matcher",
+  "description": "Production-grade AI resume parser and job matcher with PDF extraction, OCR fallback, structured NLP/LLM extraction, skill normalization, and semantic matching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

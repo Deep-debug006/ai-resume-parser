@@ -1,0 +1,443 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Version-controlled dictionary mapping canonical skill names to known aliases, abbreviations, and spelling variants.",
+  "skills": {
+    "JavaScript": [
+      "js",
+      "javascript",
+      "java script",
+      "ecmascript",
+      "es6",
+      "es6+",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "es2019",
+      "es2020",
+      "es2021",
+      "es2022",
+      "vanilla js",
+      "vanillajs"
+    ],
+    "TypeScript": [
+      "ts",
+      "typescript",
+      "type script"
+    ],
+    "React": [
+      "react",
+      "reactjs",
+      "react.js",
+      "react js"
+    ],
+    "React Native": [
+      "react native",
+      "react-native",
+      "reactnative"
+    ],
+    "Node.js": [
+      "node",
+      "nodejs",
+      "node.js",
+      "node js"
+    ],
+    "MongoDB": [
+      "mongo",
+      "mongodb",
+      "mongo db",
+      "mongodb atlas"
+    ],
+    "Python": [
+      "python",
+      "python3",
+      "python 3",
+      "python 3.x",
+      "py3"
+    ],
+    "PostgreSQL": [
+      "postgres",
+      "postgresql",
+      "postgre",
+      "psql",
+      "postgressql",
+      "postgres sql"
+    ],
+    "MySQL": [
+      "mysql",
+      "my-sql",
+      "my sql"
+    ],
+    "SQLite": [
+      "sqlite",
+      "sqlite3",
+      "sqlite 3"
+    ],
+    "Redis": [
+      "redis",
+      "redis cache",
+      "redislabs"
+    ],
+    "Docker": [
+      "docker",
+      "docker engine",
+      "docker compose",
+      "docker-compose",
+      "docker container",
+      "docker containers"
+    ],
+    "Kubernetes": [
+      "k8s",
+      "kubernetes",
+      "kube",
+      "kubectl"
+    ],
+    "Amazon Web Services": [
+      "aws",
+      "amazon web services",
+      "amazon aws",
+      "aws cloud"
+    ],
+    "Google Cloud Platform": [
+      "gcp",
+      "google cloud",
+      "google cloud platform",
+      "google cloud services"
+    ],
+    "Microsoft Azure": [
+      "azure",
+      "ms azure",
+      "microsoft azure",
+      "azure cloud"
+    ],
+    "FastAPI": [
+      "fastapi",
+      "fast-api",
+      "fast api"
+    ],
+    "Flask": [
+      "flask",
+      "flask framework",
+      "flask-restful"
+    ],
+    "Django": [
+      "django",
+      "django rest framework",
+      "drf"
+    ],
+    "Express.js": [
+      "express",
+      "expressjs",
+      "express.js",
+      "express js"
+    ],
+    "Next.js": [
+      "next",
+      "nextjs",
+      "next.js",
+      "next js"
+    ],
+    "NestJS": [
+      "nest",
+      "nestjs",
+      "nest.js",
+      "nest js"
+    ],
+    "Vue.js": [
+      "vue",
+      "vuejs",
+      "vue.js",
+      "vue js",
+      "vue 3",
+      "vue2",
+      "vue3"
+    ],
+    "Angular": [
+      "angular",
+      "angularjs",
+      "angular.js",
+      "angular js",
+      "angular 2+",
+      "angular 14"
+    ],
+    "Svelte": [
+      "svelte",
+      "sveltekit",
+      "svelte.js",
+      "svelte js"
+    ],
+    "Tailwind CSS": [
+      "tailwind",
+      "tailwindcss",
+      "tailwind css",
+      "tailwind-css"
+    ],
+    "Bootstrap": [
+      "bootstrap",
+      "bootstrap 5",
+      "bootstrap 4",
+      "twitter bootstrap"
+    ],
+    "HTML5": [
+      "html",
+      "html5",
+      "html 5"
+    ],
+    "CSS3": [
+      "css",
+      "css3",
+      "css 3"
+    ],
+    "Sass": [
+      "sass",
+      "scss"
+    ],
+    "GraphQL": [
+      "graphql",
+      "graph-ql",
+      "graph ql",
+      "apollo graphql"
+    ],
+    "RESTful APIs": [
+      "rest",
+      "rest api",
+      "restful",
+      "rest apis",
+      "restful api",
+      "restful apis",
+      "restful web services"
+    ],
+    "gRPC": [
+      "grpc",
+      "g-rpc"
+    ],
+    "Apache Kafka": [
+      "kafka",
+      "apache kafka"
+    ],
+    "RabbitMQ": [
+      "rabbitmq",
+      "rabbit-mq",
+      "rabbit mq"
+    ],
+    "Elasticsearch": [
+      "elastic",
+      "elasticsearch",
+      "elastic search",
+      "elk stack",
+      "elk"
+    ],
+    "Git": [
+      "git",
+      "version control git",
+      "git vcs"
+    ],
+    "GitHub": [
+      "github",
+      "git hub"
+    ],
+    "GitLab": [
+      "gitlab",
+      "git lab"
+    ],
+    "CI/CD": [
+      "ci/cd",
+      "cicd",
+      "ci-cd",
+      "ci cd",
+      "continuous integration",
+      "continuous deployment",
+      "continuous delivery"
+    ],
+    "GitHub Actions": [
+      "github actions",
+      "gh actions",
+      "github-actions"
+    ],
+    "Jenkins": [
+      "jenkins",
+      "jenkins ci"
+    ],
+    "Terraform": [
+      "terraform",
+      "hashicorp terraform"
+    ],
+    "Ansible": [
+      "ansible",
+      "ansible automation"
+    ],
+    "Linux": [
+      "linux",
+      "gnu/linux",
+      "unix/linux",
+      "linux os"
+    ],
+    "C++": [
+      "cpp",
+      "c++",
+      "c plus plus",
+      "c/c++"
+    ],
+    "C#": [
+      "c#",
+      "csharp",
+      "c sharp",
+      "c-sharp"
+    ],
+    ".NET": [
+      ".net",
+      "dotnet",
+      "dot net",
+      ".net core",
+      "dotnet core",
+      "asp.net",
+      "asp.net core"
+    ],
+    "Java": [
+      "java",
+      "core java",
+      "java 8",
+      "java 11",
+      "java 17",
+      "j2se",
+      "j2ee"
+    ],
+    "Spring Boot": [
+      "spring",
+      "spring boot",
+      "springboot",
+      "spring framework"
+    ],
+    "Go": [
+      "golang",
+      "go language",
+      "go lang"
+    ],
+    "Rust": [
+      "rust",
+      "rustlang",
+      "rust-lang"
+    ],
+    "Ruby": [
+      "ruby"
+    ],
+    "Ruby on Rails": [
+      "rails",
+      "ruby on rails",
+      "ror"
+    ],
+    "PHP": [
+      "php",
+      "php8",
+      "php 8",
+      "php7"
+    ],
+    "Laravel": [
+      "laravel",
+      "laravel framework"
+    ],
+    "Swift": [
+      "swift",
+      "swiftui",
+      "swift-lang"
+    ],
+    "Kotlin": [
+      "kotlin",
+      "kotlin/android"
+    ],
+    "SQL": [
+      "sql",
+      "structured query language",
+      "relational sql"
+    ],
+    "NoSQL": [
+      "nosql",
+      "no-sql",
+      "no sql"
+    ],
+    "Cassandra": [
+      "cassandra",
+      "apache cassandra"
+    ],
+    "Apache Spark": [
+      "spark",
+      "apache spark",
+      "pyspark"
+    ],
+    "Pandas": [
+      "pandas",
+      "python pandas"
+    ],
+    "NumPy": [
+      "numpy",
+      "python numpy"
+    ],
+    "Scikit-Learn": [
+      "scikit-learn",
+      "scikit learn",
+      "sklearn"
+    ],
+    "TensorFlow": [
+      "tensorflow",
+      "tensor flow",
+      "tf"
+    ],
+    "PyTorch": [
+      "pytorch",
+      "py torch",
+      "torch"
+    ],
+    "Machine Learning": [
+      "ml",
+      "machine learning",
+      "machine learning (ml)"
+    ],
+    "Deep Learning": [
+      "dl",
+      "deep learning"
+    ],
+    "Natural Language Processing": [
+      "nlp",
+      "natural language processing"
+    ],
+    "Large Language Models": [
+      "llm",
+      "llms",
+      "large language models",
+      "genai",
+      "generative ai"
+    ],
+    "Microservices": [
+      "microservices",
+      "micro services",
+      "microservice architecture",
+      "microservice"
+    ],
+    "Agile": [
+      "agile",
+      "scrum",
+      "agile/scrum",
+      "kanban",
+      "agile methodology"
+    ],
+    "Object-Oriented Programming": [
+      "oop",
+      "object-oriented programming",
+      "object oriented programming",
+      "oops"
+    ],
+    "Test-Driven Development": [
+      "tdd",
+      "test-driven development",
+      "test driven development"
+    ],
+    "Jest": [
+      "jest",
+      "jestjs"
+    ],
+    "Pytest": [
+      "pytest",
+      "py.test"
+    ]
+  }
+}
