@@ -645,7 +645,7 @@ python3 -m pytest backend/tests/ -v
 **AI Resume Parser & Job Matcher Platform**
 
 - **Project Lead & Architecture**: Software Engineering Team
-- **Repository**: [GitHub Repository](https://github.com/example/ai-resume-parser)
+- **Repository**: [GitHub Repository](https://github.com/Deep-debug006/ai-resume-parser)
 - **License**: MIT Open Source License
 
 *Engineered with strict non-evaluative principles: Designed to empower recruiters and candidates with explainable transparency, factual accuracy, and deterministic precision.*
